@@ -11,6 +11,11 @@ module.exports = {
       colors:{
         'primary':'#2098ff'
       },
+      boxShadow: {
+        'innerlg': 'inset 0px 60px 100px -78px rgba(184,255,247,1)',
+        // -webkit-box-shadow: inset 0px 60px 100px -78px rgba(184,255,247,1);
+        // -moz-box-shadow: inset 0px 60px 100px -78px rgba(184,255,247,1);
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

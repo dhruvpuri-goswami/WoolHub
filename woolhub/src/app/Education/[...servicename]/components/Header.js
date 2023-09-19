@@ -32,13 +32,13 @@ const Header = ({params}) => {
                             <div id="dropdown" className="z-10 hidden absolute group-hover:block bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                 <ul className="py-2 text-sm " aria-labelledby="dropdownDefault">
                                     <li>
-                                        <Link href="/E&T/Roadmap" className="block px-4 py-2 hover:bg-gray-100 ">Roadmap</Link>
+                                        <Link href="/Education/Roadmap" className="block px-4 py-2 hover:bg-gray-100 ">Roadmap</Link>
                                     </li>
                                     <li>
-                                        <Link href="/E&T/Vaccination" className="block px-4 py-2 hover:bg-gray-100 ">Vaccination</Link>
+                                        <Link href="/Education/Vaccination" className="block px-4 py-2 hover:bg-gray-100 ">Vaccination</Link>
                                     </li>
                                     <li>
-                                        <Link href="/E&T/Schemes" className="block px-4 py-2 hover:bg-gray-100 ">Government Schemes</Link>
+                                        <Link href="/Education/Schemes" className="block px-4 py-2 hover:bg-gray-100 ">Government Schemes</Link>
                                     </li>
                                 </ul>
                             </div>

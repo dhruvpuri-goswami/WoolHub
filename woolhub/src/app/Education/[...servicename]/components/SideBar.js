@@ -2,50 +2,53 @@
 import { Sidebar } from 'flowbite-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function SideBar({ params ,active}) {
+export default function SideBar({ params, active }) {
     const router = useRouter();
-    const Roadmap = [
-        'Production',
-        'Sorting & Dyeing',
-        'Quality Assurance',
-        'Sales & Marketing',
-    ];
-    const Vaccination = [
-        'Sheep Feeding',
-        'Wool enhancement',
-        'Sheep vaccinations',
-        'Enhance Reach'
-    ];
-    const Schemes = [
-        'Grants',
-        'Initiatives',
-        'Storage Solutions',
-        'Market Programs'
-    ]
+    const sections = {
+        Roadmap: [
+            'Production',
+            'Sorting & Dyeing',
+            'Quality Assurance',
+            'Sales & Marketing',
+        ],
+        Vaccination: [
+            'Sheep Feeding',
+            'Wool enhancement',
+            'Sheep vaccinations',
+            'Enhance Reach'
+        ],
+        Schemes: [
+            'Grants',
+            'Initiatives',
+            'Storage Solutions',
+            'Market Programs'
+        ]
+    }
 
-    const mapArr = params === "Roadmap" ?
-        Roadmap :
-        (params === "Vaccination" ?
-            Vaccination
-            :
-            (params === "Schemes") ?
-                Schemes : undefined)
+
+    let mapArr = Object.keys(sections).filter(item => item===params);
+    mapArr = sections[mapArr[0]]
+
+    if (active === undefined && typeof window !== 'undefined') {
+        router.push(`/Education/${params}/${mapArr[0]}`)
+    }
     return (
-        <Sidebar className='m-10' aria-label="Sidebar with multi-level dropdown example">
+        <Sidebar className='mx-10 my-5 min-w-[270px] h-[]' aria-label="Sidebar with multi-level dropdown example">
             <Sidebar.Items>
                 <Sidebar.ItemGroup>
                     {
-                        mapArr  !== undefined?
+                        mapArr !== undefined ?
                             mapArr.map((item) => (
-                                <Sidebar.Item className={decodeURI(active)===item?'bg-primary text-white hover:bg-primary hover:text-white':''} key={item}>
-                                    <p>
-                                        {item}
-                                    </p>
-                                </Sidebar.Item>
+                                <Link key={item} href={`/Education/${params}/${item}`} className={`flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 ${decodeURIComponent(active) === item ? 'bg-primary text-white hover:text-white hover:bg-primary' : ''}`} >
+                                    <span data-testid="flowbite-sidebar-item-content" id="flowbite-sidebar-item-:r4:" className="px-3 flex-1 whitespace-nowrap">
+                                        <p>{item}</p>
+                                    </span>
+                                </Link>
                             ))
                             :
-                            router.push(`/E&T/${params}/${active}`)
+                            router.push(`/Education`)
                     }
                 </Sidebar.ItemGroup>
             </Sidebar.Items>
@@ -59,5 +62,3 @@ export default function SideBar({ params ,active}) {
         </Sidebar>
     )
 }
-
-

@@ -20,7 +20,7 @@ const ETImage = ({ img1, img2, img3 }) => {
               height="350"
               src={img1}
               alt="Social worker"
-              className="w-50 rounded-2xl shadow-xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-gray-100"
+              className="w-50 rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-gray-100"
             />
           </div>
           <div className="py-3 sm:py-4">
@@ -29,7 +29,7 @@ const ETImage = ({ img1, img2, img3 }) => {
               height="350"
               src={img2}
               alt="Social Service"
-              className="w-50 rounded-2xl shadow-xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-gray-100"
+              className="w-50 rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-gray-100"
             />
           </div>
         </div>
