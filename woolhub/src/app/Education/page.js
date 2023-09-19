@@ -13,6 +13,7 @@ import onlineEdu from "../../../public/Assets/Images/Education/online learning.p
 import scheme1 from "../../../public/Assets/Images/Education/scheme1.png"
 import scheme2 from "../../../public/Assets/Images/Education/scheme2.png"
 import scheme3 from "../../../public/Assets/Images/Education/scheme3.png"
+import Link from 'next/link'
 
 
 const page = () => {
@@ -22,6 +23,7 @@ const page = () => {
             img1: farmImg1.src,
             img2: farmImg2.src,
             img3: onlineEdu.src,
+            type: "Roadmap",
             serviceDetails: [
                 {
                     key: 1,
@@ -40,12 +42,13 @@ const page = () => {
                 }
             ]
         },
-
+        
         /* second section data */
         {
             img1: farmImg1.src,
             img2: farmImg2.src,
             img3: farmImg3.src,
+            type: "Vaccination",
             serviceDetails: [
                 {
                     key: 1,
@@ -66,12 +69,13 @@ const page = () => {
                 }
             ]
         },
-
+        
         /* third section data */
         {
             img1: scheme1.src,
             img2: scheme2.src,
             img3: scheme3.src,
+            type: "Schemes",
             serviceDetails: [
                 {
                     key: 1,
@@ -130,10 +134,10 @@ const ServiceComponents = ({ service, index }) => {
                     ))
                 }
             <div className='flex align-center justify-start w-full my-1 px-2'>
-                <button class="bg-slate-900 text-white hover:bg-gray-800 text-gray-800 font-bold py-2 px-6 rounded inline-flex items-center justify-between rounded-full w-40">
+                <Link href={`/Education/${service.type}`} class="bg-slate-900 text-white hover:bg-gray-800 text-gray-800 font-bold py-2 px-6 rounded inline-flex items-center justify-between rounded-full w-40">
                     <span>Let's Start</span>
                     <FontAwesomeIcon width={20} icon={faArrowRightLong} />
-                </button>
+                </Link>
             </div>
             </div>
         </div>
