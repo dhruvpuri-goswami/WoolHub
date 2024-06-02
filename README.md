@@ -33,7 +33,7 @@ A step by step series of examples that tell you how to get a development environ
 
 1. Clone the repo
 ```bash
-git clone https://github.com/yourusername/woolhub.git
+git clone https://github.com/dhruvpuri-goswami/woolHub.git
 ```
 
 2. Install NPM packages
